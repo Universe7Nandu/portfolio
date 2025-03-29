@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nandesh Kalashetti - 3D Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Add Animate.css for smooth animations -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <!-- Add Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Add three.js for 3D effects -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- Add particles.js for background effects -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+
+<body>
+  <!-- Particles Background -->
+  <div id="particles-js"></div>
+
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="loader">
+      <div class="cube-loader">
+        <div class="cube-wrapper">
+          <div class="cube-folding">
+            <span class="leaf1"></span>
+            <span class="leaf2"></span>
+            <span class="leaf3"></span>
+            <span class="leaf4"></span>
+          </div>
+          <span class="loading" data-name="Loading">Nandesh Kalashetti</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <!-- Navbar -->
+  <header class="header">
+    <div class="nav-container">
+      <div class="logo-container">
+        <img src="images/nandesh_logo_professional.png" class="logo" alt="Nandesh Logo" />
+      </div>
+      <nav class="navbar">
+        <ul class="nav-links" id="nav-links">
+          <li style="--i:1"><a href="#hero" class="nav-link active" data-text="Home">Home</a></li>
+          <li style="--i:2"><a href="#about" class="nav-link" data-text="About">About</a></li>
+          <li style="--i:3"><a href="#projects" class="nav-link" data-text="Projects">Projects</a></li>
+          <li style="--i:4"><a href="#portfolio" class="nav-link" data-text="Portfolio">Portfolio</a></li>
+          <li style="--i:5"><a href="#contact" class="nav-link" data-text="Contact">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero-section">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h4 class="greeting">Hello, I'm</h4>
+        <h1 class="name">Nandesh Kalashetti</h1>
+        <div class="role-container">
+          <p class="subtitle">a Passionate</p>
+          <span id="typing-text"></span>
+        </div>
+        <p class="university">From <a href="#" class="university-link">Solapur University</a>, Akkalkot.</p>
+        <div class="cta-container">
+          <a href="#contact" class="cta-button">Let's Work Together</a>
+          <a href="images/resume.pdf" class="cta-button secondary" download>Download CV</a>
+        </div>
+      </div>
+      <div class="hero-image-container">
+        <div class="cube-container">
+          <div class="cube">
+            <div class="face front"></div>
+            <div class="face back"></div>
+            <div class="face right"></div>
+            <div class="face left"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+          </div>
+        </div>
+        <div class="profile-image">
+          <img src="images/nandu5.jpg" alt="Nandesh Kalashetti" />
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="mouse"></div>
+      <p>Scroll Down</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-text="About Me">About Me</h2>
+        <div class="underline"></div>
+      </div>
+      <div class="about-content">
+        <div class="about-image">
+          <div class="image-container">
+            <img src="images/nandu5.jpg" alt="Nandesh Kalashetti" />
+            <div class="image-border"></div>
+          </div>
+        </div>
+        <div class="about-text">
+          <p class="about-description">
+            I am a dedicated full-stack developer with expertise in the MERN stack, React.js, TypeScript, PHP, and
+            MySQL. My passion lies in building innovative, efficient, and scalable solutions to optimize operations and
+            drive results. With a strong focus on delivering high-quality work, I strive to bridge technical challenges
+            with practical solutions that align with business goals.
+          </p>
+          <div class="tabs-container">
+            <div class="tab-buttons">
+              <button class="tab-btn active" data-tab="skills">Skills</button>
+              <button class="tab-btn" data-tab="experience">Experience</button>
+              <button class="tab-btn" data-tab="education">Education</button>
+            </div>
+            <div class="tab-content">
+              <div class="tab-pane active" id="skills">
+                <ul class="skills-list">
+                  <li class="skill-item">
+                    <span class="skill-name" data-percentage="90%">JavaScript</span>
+                    <div class="skill-bar">
+                      <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                  </li>
+                  <li class="skill-item">
+                    <span class="skill-name" data-percentage="85%">React.js</span>
+                    <div class="skill-bar">
+                      <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                  </li>
+                  <li class="skill-item">
+                    <span class="skill-name" data-percentage="80%">PHP</span>
+                    <div class="skill-bar">
+                      <div class="skill-progress" style="width: 80%"></div>
+                    </div>
+                  </li>
+                  <li class="skill-item">
+                    <span class="skill-name" data-percentage="75%">MySQL</span>
+                    <div class="skill-bar">
+                      <div class="skill-progress" style="width: 75%"></div>
+                    </div>
+                  </li>
+                  <li class="skill-item">
+                    <span class="skill-name" data-percentage="70%">Docker & Jenkins</span>
+                    <div class="skill-bar">
+                      <div class="skill-progress" style="width: 70%"></div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-pane" id="experience">
+                <div class="timeline">
+                  <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                      <h3>Full-Stack Developer</h3>
+                      <p class="timeline-date">May 2023 - Oct 2023</p>
+                      <p class="timeline-company">Katare Informatics</p>
+                      <p class="timeline-description">Gained extensive expertise in PHP, MySQL, and front-end technologies. Developed responsive web applications with focus on user experience and performance optimization.</p>
+                    </div>
+                  </div>
+                  <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                      <h3>Web Developer Intern</h3>
+                      <p class="timeline-date">Jan 2023 - Apr 2023</p>
+                      <p class="timeline-company">TechSolutions Inc.</p>
+                      <p class="timeline-description">Worked on front-end development using React.js. Collaborated with senior developers on various client projects.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="education">
+                <div class="timeline">
+                  <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                      <h3>B.Tech in IT</h3>
+                      <p class="timeline-date">2020 - 2024</p>
+                      <p class="timeline-institution">Walchand Institute of Technology, Solapur</p>
+                      <p class="timeline-description">CGPA: 8.8/10</p>
+                    </div>
+                  </div>
+                  <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                      <h3>12th Grade</h3>
+                      <p class="timeline-date">2019 - 2020</p>
+                      <p class="timeline-institution">Walchand College of Arts, Solapur</p>
+                      <p class="timeline-description">Percentage: 89%</p>
+                    </div>
+                  </div>
+                  <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                      <h3>10th Grade</h3>
+                      <p class="timeline-date">2017 - 2018</p>
+                      <p class="timeline-institution">Mangrule High School, Solapur</p>
+                      <p class="timeline-description">Percentage: 82%</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-text="Projects">Projects</h2>
+        <div class="underline"></div>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-icon">
+            <i class="fas fa-chalkboard-teacher"></i>
+          </div>
+          <h3 class="project-title">ActivityHub</h3>
+          <p class="project-description">
+            A social learning platform featuring secure user authentication, real-time learning modules, and
+            personalized notifications.
+          </p>
+          <div class="project-tech">
+            <span class="tech-badge">React.js</span>
+            <span class="tech-badge">HTML5</span>
+            <span class="tech-badge">CSS3</span>
+            <span class="tech-badge">PHP</span>
+            <span class="tech-badge">MySQL</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-icon">
+            <i class="fas fa-calculator"></i>
+          </div>
+          <h3 class="project-title">Advanced Counter</h3>
+          <p class="project-description">
+            An advanced mathematical utility with a dynamic state management system and modular design.
+          </p>
+          <div class="project-tech">
+            <span class="tech-badge">React.js</span>
+            <span class="tech-badge">JavaScript ES6+</span>
+            <span class="tech-badge">CSS</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-icon">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+          <h3 class="project-title">E-Cart</h3>
+          <p class="project-description">
+            A modern online shopping platform with features like responsive design and light/dark modes.
+          </p>
+          <div class="project-tech">
+            <span class="tech-badge">HTML5</span>
+            <span class="tech-badge">CSS3</span>
+            <span class="tech-badge">JavaScript</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-icon">
+            <i class="fas fa-language"></i>
+          </div>
+          <h3 class="project-title">Language Translator</h3>
+          <p class="project-description">
+            A multilingual translator application with support for over 50 languages and real-time voice translation capabilities.
+          </p>
+          <div class="project-tech">
+            <span class="tech-badge">React</span>
+            <span class="tech-badge">API Integration</span>
+            <span class="tech-badge">CSS3</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-icon">
+            <i class="fas fa-robot"></i>
+          </div>
+          <h3 class="project-title">AI Chatbot</h3>
+          <p class="project-description">
+            An intelligent conversational AI chatbot capable of answering questions, providing recommendations, and automating tasks.
+          </p>
+          <div class="project-tech">
+            <span class="tech-badge">Node.js</span>
+            <span class="tech-badge">AI/ML</span>
+            <span class="tech-badge">Express</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-icon">
+            <i class="fas fa-question-circle"></i>
+          </div>
+          <h3 class="project-title">MCQ Platform</h3>
+          <p class="project-description">
+            An interactive multiple-choice question platform for educational assessment with analytics and progress tracking.
+          </p>
+          <div class="project-tech">
+            <span class="tech-badge">React</span>
+            <span class="tech-badge">Node.js</span>
+            <span class="tech-badge">MongoDB</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-text="Portfolio">Portfolio</h2>
+        <div class="underline"></div>
+      </div>
+      <div class="portfolio-filter">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="web">Web Dev</button>
+        <button class="filter-btn" data-filter="app">Mobile</button>
+        <button class="filter-btn" data-filter="design">Design</button>
+      </div>
+      <div class="portfolio-grid">
+        <div class="portfolio-item" data-category="web">
+          <div class="portfolio-item-inner">
+            <div class="portfolio-img">
+              <img src="images/activityhub.jpg" alt="ActivityHub" />
+            </div>
+            <div class="portfolio-info">
+              <h3>ActivityHub</h3>
+              <div class="portfolio-category">Web Development</div>
+              <div class="portfolio-links">
+                <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
+                <a href="https://github.com/Universe7Nandu" class="portfolio-github" target="_blank"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+            <div class="portfolio-overlay">
+              <div class="portfolio-overlay-content">
+                <h3>ActivityHub</h3>
+                <p>A social learning platform with secure authentication and real-time modules.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item" data-category="web">
+          <div class="portfolio-item-inner">
+            <div class="portfolio-img">
+              <img src="images/counter.jpg" alt="Advanced Counter" />
+            </div>
+            <div class="portfolio-info">
+              <h3>Advanced Counter</h3>
+              <div class="portfolio-category">Web Development</div>
+              <div class="portfolio-links">
+                <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
+                <a href="https://github.com/Universe7Nandu" class="portfolio-github" target="_blank"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+            <div class="portfolio-overlay">
+              <div class="portfolio-overlay-content">
+                <h3>Advanced Counter</h3>
+                <p>An interactive mathematical utility built using React.js.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item" data-category="web">
+          <div class="portfolio-item-inner">
+            <div class="portfolio-img">
+              <img src="images/ecart.jpg" alt="E-Cart" />
+            </div>
+            <div class="portfolio-info">
+              <h3>E-Cart</h3>
+              <div class="portfolio-category">Web Development</div>
+              <div class="portfolio-links">
+                <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
+                <a href="https://github.com/Universe7Nandu" class="portfolio-github" target="_blank"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+            <div class="portfolio-overlay">
+              <div class="portfolio-overlay-content">
+                <h3>E-Cart</h3>
+                <p>A modern online shopping platform with light/dark modes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item" data-category="app">
+          <div class="portfolio-item-inner">
+            <div class="portfolio-img">
+              <img src="images/language1.jpg" alt="Language Translator" />
+            </div>
+            <div class="portfolio-info">
+              <h3>Language Translator</h3>
+              <div class="portfolio-category">Application</div>
+              <div class="portfolio-links">
+                <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
+                <a href="https://github.com/Universe7Nandu" class="portfolio-github" target="_blank"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+            <div class="portfolio-overlay">
+              <div class="portfolio-overlay-content">
+                <h3>Language Translator</h3>
+                <p>A multilingual translator with real-time speech recognition.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item" data-category="app">
+          <div class="portfolio-item-inner">
+            <div class="portfolio-img">
+              <img src="images/chatbot.png" alt="AI Chatbot" />
+            </div>
+            <div class="portfolio-info">
+              <h3>AI Chatbot</h3>
+              <div class="portfolio-category">AI Application</div>
+              <div class="portfolio-links">
+                <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
+                <a href="https://github.com/Universe7Nandu" class="portfolio-github" target="_blank"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+            <div class="portfolio-overlay">
+              <div class="portfolio-overlay-content">
+                <h3>AI Chatbot</h3>
+                <p>An intelligent conversational assistant powered by machine learning.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item" data-category="design">
+          <div class="portfolio-item-inner">
+            <div class="portfolio-img">
+              <img src="images/mcq.jpg" alt="MCQ Platform" />
+            </div>
+            <div class="portfolio-info">
+              <h3>MCQ Platform</h3>
+              <div class="portfolio-category">Web Application</div>
+              <div class="portfolio-links">
+                <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
+                <a href="https://github.com/Universe7Nandu" class="portfolio-github" target="_blank"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+            <div class="portfolio-overlay">
+              <div class="portfolio-overlay-content">
+                <h3>MCQ Platform</h3>
+                <p>An interactive educational assessment platform with analytics.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-text="Contact Me">Contact Me</h2>
+        <div class="underline"></div>
+      </div>
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-text">
+              <h3>Email</h3>
+              <p>nandeshkalshetti1@gmail.com</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="contact-text">
+              <h3>Phone</h3>
+              <p>9420732657</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-text">
+              <h3>Location</h3>
+              <p>Solapur, Maharashtra, India</p>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="https://github.com/Universe7Nandu" class="social-link" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/nandesh-kalashetti" class="social-link" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://leetcode.com/u/Nandesh2386/" class="social-link" target="_blank">
+              <i class="fab fa-leetcode"></i>
+            </a>
+          </div>
+          <div class="resume-download">
+            <a href="images/resume.pdf" download class="download-btn">
+              <i class="fas fa-download"></i> Download Resume
+            </a>
+          </div>
+        </div>
+        <div class="contact-form">
+          <form name="contact" id="contact-form" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="contact" />
+            <p hidden>
+              <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+            </p>
+            <div class="form-group">
+              <input type="text" name="name" placeholder="Your Name" required class="form-control" />
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" placeholder="Your Email" required class="form-control" />
+            </div>
+            <div class="form-group">
+              <input type="text" name="subject" placeholder="Subject" class="form-control" />
+            </div>
+            <div class="form-group">
+              <textarea name="message" placeholder="Your Message" required class="form-control"></textarea>
+            </div>
+            <button type="submit" class="submit-btn">
+              <span>Send Message</span>
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+          <div id="form-message"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="images/nandesh_logo_professional.png" alt="Nandesh Logo" />
+        </div>
+        <p class="copyright">© 2025 Nandesh Kalashetti. All Rights Reserved.</p>
+        <div class="footer-links">
+          <a href="#hero">Home</a>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="back-to-top">
+        <a href="#hero"><i class="fas fa-arrow-up"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script src="script.js"></script>
+
+  <!-- AOS Animation Library for scroll animations -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</body>
+
+</html>
